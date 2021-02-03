@@ -11,7 +11,9 @@ const getTableProps = (props, { instance }) => [
   {
     style: {
       display: `grid`,
-      gridTemplateColumns: instance.state.gridLayout.columnWidths.map(w => w).join(` `),
+      gridTemplateColumns: instance.state.gridLayout.columnWidths
+        .map(w => w)
+        .join(` `),
     },
   },
 ]
@@ -21,7 +23,7 @@ const getHeaderProps = (props, { column }) => [
   {
     id: `header-cell-${column.id}`,
     style: {
-      position: `sticky` //enables a scroll wrapper to be placed around the table and have sticky headers
+      position: `sticky`, //enables a scroll wrapper to be placed around the table and have sticky headers
     },
   },
 ]
@@ -38,7 +40,9 @@ function reducer(state, action, previousState, instance) {
 
   if (action.type === `columnStartResizing`) {
     const { columnId } = action
-    const columnIndex = instance.visibleColumns.findIndex(col => col.id === columnId)
+    const columnIndex = instance.visibleColumns.findIndex(
+      col => col.id === columnId
+    )
     const elWidth = getElementWidth(columnId)
 
     if (elWidth !== undefined) {
@@ -48,7 +52,7 @@ function reducer(state, action, previousState, instance) {
           ...state.gridLayout,
           columnId,
           columnIndex,
-          startingWidth: elWidth
+          startingWidth: elWidth,
         },
       }
     } else {
@@ -57,11 +61,7 @@ function reducer(state, action, previousState, instance) {
   }
 
   if (action.type === `columnResizing`) {
-    const {
-      columnIndex,
-      startingWidth,
-      columnWidths,
-    } = state.gridLayout
+    const { columnIndex, startingWidth, columnWidths } = state.gridLayout
 
     const change = state.columnResizing.startX - action.clientX
     const newWidth = startingWidth - change
