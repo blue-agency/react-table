@@ -1,16 +1,11 @@
 {
-  "name": "react-table",
+  "name": "@blue-agency/react-table",
   "version": "1.0.0-semantic-release",
   "description": "Hooks for building lightweight, fast and extendable datagrids for React",
   "license": "MIT",
-  "homepage": "https://react-table.tanstack.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tannerlinsley/react-table"
-  },
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/tannerlinsley"
+    "url": "https://github.com/blue-agency/react-table"
   },
   "keywords": [
     "react",
@@ -32,12 +27,7 @@
   },
   "release": {
     "branches": [
-      "6.x",
-      "master",
-      {
-        "name": "next",
-        "prerelease": true
-      }
+      "master"
     ]
   },
   "files": [
