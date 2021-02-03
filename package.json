@@ -1,6 +1,6 @@
 {
   "name": "@blue-agency/react-table",
-  "version": "1.0.0-semantic-release",
+  "version": "7.6.4-alpha.2",
   "description": "Hooks for building lightweight, fast and extendable datagrids for React",
   "license": "MIT",
   "repository": {
