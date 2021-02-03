@@ -6,8 +6,8 @@ export const actions = {
   init: 'init',
 }
 
-export const defaultRenderer = ({ value = '' }) => value;
-export const emptyRenderer = () => <>&nbsp;</>;
+export const defaultRenderer = ({ value = '' }) => value
+export const emptyRenderer = () => <>&nbsp;</>
 
 export const defaultColumn = {
   Cell: defaultRenderer,
