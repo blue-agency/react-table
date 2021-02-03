@@ -91,7 +91,6 @@ export const useTable = (props, ...plugins) => {
   )
 
   const {
-    data,
     columns: userColumns,
     initialState,
     defaultColumn,
@@ -144,6 +143,9 @@ export const useTable = (props, ...plugins) => {
     state,
     dispatch,
   })
+
+  // Allow the user to overwrite data in useControlledState
+  const { data } = getInstance()
 
   // Decorate All the columns
   const columns = React.useMemo(
